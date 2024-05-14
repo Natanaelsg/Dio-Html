@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salvar Nome</title>
+</head>
+<body>
+    <h3> </h3>
+
+
+    <h1>Digite seu nome:</h1>
+    <input type="text" id="nameInput" placeholder="Seu nome">
+    <button onclick="saveName()">Salvar Nome</button>
+    <h2 id="greeting"></h2>
+
+    <p>
+        tão inesperado quanto brutal, o auto-intitulado Rei dos Ladrões
+        conhecido como <u> <strong> Gangplank </strong> </u> comanda Águas de Sentina com uma mistura de
+        medo, violência e astúcia. Aonde vai, morte e ruína são o seu rastro.
+        Tal é sua infâmia e reputação que o menor vislumbre de suas velas
+        negras no horizonte causa pânico até mesmo na tripulação mais valente.  </p>
+    </p>
+
+    <h3 style="font-size: 39px;"> Apesar de <u> <strong> Gangplank </strong> </u> ter incorrido na fúria de muitos, ninguém
+        havia conseguido levá-lo à justiça, apesar dos assassinos, caçadores de
+        recompensas e frotas enviados atrás dele. Ele sente um prazer vil em
+        sempre aumentar a recompensa por sua cabeça e certifica-se de pregá-las
+        ao Painel de Recompensas em Águas de Sentina para que todos possam ver
+        sempre que ele retorna ao porto com seus navios pesados de itens
+        pilhados.</h3>
+
+    <h4>
+        Recentemente,<u> <strong> Gangplank </strong> </u> foi derrotado pelas
+      maquinações da caçadora de recompensas Miss Fortune. Seu navio foi
+      destruído para que toda Águas de Sentina visse, matando sua tripulação
+      e despedaçando sua aura de invencibilidade. Agora que viram que ele
+      está vulnerável, as gangues de Águas de Sentina ergueram-se, lutando
+      entre eles mesmos para clamar o domínio da cidade portuária.
+    </h4>    
+ <h5><a href="about.html">  <= voltar </a></h5>
+    <script>
+        // Função para salvar o nome no armazenamento local
+        function saveName() {
+            // Obter o valor digitado no campo de texto
+            var nome = document.getElementById("nameInput").value;
+            // Salvar o valor no localStorage com a chave "nome"
+            localStorage.setItem("nome", nome);
+            // Exibir a saudação com o nome salvo
+            displayGreeting();
+        }
+
+        // Função para exibir a saudação com o nome salvo
+        function displayGreeting() {
+            // Obter o valor salvo no localStorage
+            var nome = localStorage.getItem("nome");
+            // Se houver um nome salvo, exibir a saudação
+            if (nome) {
+                document.getElementById("greeting").innerText = "Olá, " + nome + "!";
+            }
+        }
+
+        // Chamar a função para exibir a saudação quando a página é carregada
+        window.onload = function() {
+            displayGreeting();
+        }
+    </script>
+</body>
+</html>
